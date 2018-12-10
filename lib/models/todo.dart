@@ -21,4 +21,12 @@ class Todo {
       done: data['done'],
     );
   }
+
+  Todo copyWith({int id, String title, bool done}) {
+    return Todo(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      done: done ?? this.done,
+    );
+  }
 }

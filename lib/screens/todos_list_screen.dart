@@ -6,6 +6,8 @@ import '../models/todo_ducs.dart';
 
 import '../models/app_state.dart';
 
+import 'package:flt_todos/views/todo_item.dart';
+
 class TodosListScreen extends StatelessWidget {
   Widget _buildTodosList() {
     return StoreConnector<AppState, List<Todo>>(
@@ -18,7 +20,7 @@ class TodosListScreen extends StatelessWidget {
         return ListView.builder(
           itemCount: todos.length,
           itemBuilder: (BuildContext contex, index) {
-            return Text('${todos[index].title}');
+            return TodoItemView(todos[index]);
           },
         );
       },
